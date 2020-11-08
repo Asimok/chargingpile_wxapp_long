@@ -1,0 +1,59 @@
+<view class="banner">
+	<swiper indicator-dots indicator-color="rgba(255,255,255,0.6)" autoplay="{{true}}" interval="3000" indicator-active-color="rgba(255,255,255,1)" circular>
+		<swiper-item>
+			<image src="https://asimov-1258043582.cos.ap-nanjing.myqcloud.com/img/20201025154152.png"></image>
+		</swiper-item>
+		<swiper-item>
+			<image src="https://asimov-1258043582.cos.ap-nanjing.myqcloud.com/img/20201025154103.png"></image>
+		</swiper-item>
+
+		<swiper-item>
+			<image src="https://asimov-1258043582.cos.ap-nanjing.myqcloud.com/img/20201025154132.png"></image>
+		</swiper-item>
+	</swiper>
+
+
+	<view class="subject">
+		<view class="subBox">
+			<navigator url="/pages/nearby/nearby">
+				<image src="/images/kecheng6.png"></image>
+				<view>附近车棚</view>
+			</navigator>
+		</view>
+		<view class="subBox">
+			<navigator url="/pages/mostuse/mostuse">
+				<image src="/images/kecheng2.png"></image>
+				<view>常用站点</view>
+			</navigator>
+		</view>
+
+		<view class="subBox">
+			<navigator url="/pages/search_bikeshed/search_bikeshed">
+				<image src="/images/kecheng3.png"></image>
+				<view>搜索车棚</view>
+			</navigator>
+		</view>
+
+	<view class="subBox">
+			<navigator url="/pages/videoItem/videoItem">
+				<image src="/images/kecheng4.png"></image>
+				<view>查看监控</view>
+			</navigator>
+		</view>
+		
+	</view>
+
+
+
+	<view class="content">
+		<block wx:for="{{listArr}}" wx:key="key">
+			<nearbyView datas="{{item}}"> </nearbyView>
+		</block>
+	</view>
+
+	<view class="scan" bindtap="getScancode">
+			<image src="/images/scan.png"></image>
+			<view>扫一扫充电</view>
+	</view>
+
+</view>

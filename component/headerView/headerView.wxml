@@ -1,0 +1,11 @@
+<view class="header">
+    <view class="logo">
+      <navigator url="/pages/index/index" open-type="reLaunch">
+        <image src="/images/logo.png"></image>
+      </navigator>
+    </view>
+
+    <button class="wxchat" open-type="contact">
+      <image src="/images/xiaoxi.png"></image>
+    </button>
+</view>

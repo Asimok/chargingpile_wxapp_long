@@ -1,0 +1,16 @@
+<navigator url="/pages/video/video?url={{datas.url}}" class="nearbyView">
+
+  <view class="txt">
+    <view class="h3">{{datas.bsName}}</view>
+    <view class='flex-wrp-row item'>
+      <view class="item-left">
+        <view class="id">充电桩：{{datas.no}}</view>
+      </view>
+      <view class="item-right">
+        <view class="distance">车位：{{datas.portWay}}</view>
+      </view>
+    </view>
+
+  </view>
+
+</navigator>

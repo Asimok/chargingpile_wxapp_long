@@ -1,0 +1,35 @@
+.searchbikeshedView {
+  padding: 10rpx 0;
+  border-bottom: 1px #eee dashed;
+  display: flex;
+  justify-content: space-between;
+  font-size: 33rpx;
+  color: rgb(15, 138, 209);
+
+  padding-bottom: 10rpx;
+}
+
+.searchbikeshedView .pic image {
+  width: 230rpx;
+  height: 150rpx;
+  display: block;
+}
+
+.searchbikeshedView .txt {
+  width: 435rpx;
+}
+
+.searchbikeshedView .txt .h3 {
+  font-size: 30rpx;
+  color: rgb(83, 78, 78);
+  height: 50rpx;
+}
+
+.searchbikeshedView .txt .info {
+  font-size: 26rpx;
+  color: #666
+}
+
+.searchbikeshedView .txt .info text {
+  font-size: 27rpx;
+}

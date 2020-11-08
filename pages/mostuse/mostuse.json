@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "mostuseView":"/component/mostuseView/mostuseView",
+    "headerView":"/component/headerView/headerView",
+    "footerView": "/component/footerView/footerView",
+    "loadView":"/component/loadView/loadView"
+
+  },
+  "enablePullDownRefresh":true,
+  "navigationBarTitleText":"常用站点"
+
+}

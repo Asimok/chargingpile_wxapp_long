@@ -1,0 +1,4 @@
+<button class="onLoading" loading="{{isOnLoad}}">
+    <text wx:if="{{isOnLoad}}">数据加载中....</text>
+    <text wx:else>没有更多数据了</text>
+</button>

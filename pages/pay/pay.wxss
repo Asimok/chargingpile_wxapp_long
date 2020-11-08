@@ -1,0 +1,19 @@
+.out{
+  display: block;
+  height: 100%;
+}
+.itemView{
+  margin: 20rpx; 
+  font-size: 35rpx;
+}
+.radio-group{
+  margin: 20rpx; 
+  font-size: 30rpx;
+}
+.payment-button{
+  border-radius: 80rpx;
+  margin: 70rpx 50rpx;
+  font-size: 35rpx;
+  background-color: rgb(66, 247, 30);
+  color: rgb(68, 75, 75);
+}

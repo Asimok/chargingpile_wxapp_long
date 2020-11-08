@@ -1,0 +1,28 @@
+.mostuseView {
+  padding: 10rpx 0;
+  border-bottom: 1px #eee dashed;
+  display: flex;
+  justify-content: space-between;
+  font-size: 33rpx;
+  color: rgb(15, 138, 209);
+  padding-bottom: 10rpx;
+}
+
+
+.mostuseView .txt {
+  width: 435rpx;
+}
+.mostuseView .txt .h3 {
+  font-size: 30rpx;
+  color: rgb(83, 78, 78);
+  height: 50rpx;
+}
+
+.mostuseView .txt .info {
+  font-size: 26rpx;
+  color: #666
+}
+
+.mostuseView .txt .info text {
+  font-size: 27rpx;
+}

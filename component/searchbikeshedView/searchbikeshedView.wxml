@@ -1,0 +1,8 @@
+<navigator url="/pages/getChargingpile_detail/getChargingpile_detail?bsId={{datas.bsId}}" class="searchbikeshedView">
+        <view class="txt">
+            <view class="h3">车棚：{{datas.bsName}}</view>
+            <view class="info">
+            <view>车棚ID：{{datas.bsId}}</view>
+            </view>
+        </view>
+</navigator>

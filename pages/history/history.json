@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "historyView":"/component/historyView/historyView",
+    "headerView":"/component/headerView/headerView",
+    "footerView": "/component/footerView/footerView",
+    "loadView":"/component/loadView/loadView"
+
+  },
+  "enablePullDownRefresh":true,
+  "navigationBarTitleText":"历史记录"
+
+}

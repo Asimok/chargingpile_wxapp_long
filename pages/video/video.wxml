@@ -1,0 +1,19 @@
+<View class="header">实时监控</View>
+
+<view >
+	<video style="width: 100%;height=400px;margin:1px;" 
+  src="{{src}}" 
+  binderror="videoErrorCallback" 
+  controls='{{false}}'
+  autoplay='{{true}}'
+  show-play-btn='{{false}}' 
+  show-center-play-btn='{{false}}' 
+  enable-auto-rotation='{{true}}'
+  ></video>
+</view>
+<view class="videoTime">
+  <text   wx:if="{{stopVideo}}" class="videoTime" >还可查看 {{second+"s"}}</text>
+<text   wx:else="{{stopVideo}}" class="videoTime" >您的监控使用时长已用完！</text>
+</view>
+<View   class="error_status">{{status}}</View>
+

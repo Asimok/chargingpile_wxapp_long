@@ -1,0 +1,10 @@
+<view class="header">支付成功，点击按钮开始充电</view>
+<!-- <button class="btn" bindtap="btn_charge_open">充电</button> -->
+<!-- <button class="btn" bindtap='getScancode'>扫码</button> -->
+
+<view class="tap">
+
+	<image bindtap='open_tap' wx:if="{{isShow}}" src="/images/charge2.png" class="coding_flash_image"></image>
+	<image wx:else src='/images/charge1.png' class="coding_flash_image"></image>
+			<view>{{status}}</view>
+</view>

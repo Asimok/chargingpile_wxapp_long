@@ -1,0 +1,13 @@
+  <view class="out">
+
+  	<text class="itemView">预计充电时长：{{payTime}}分钟</text>
+
+  	<radio-group class="radio-group" bindchange="radioChange">
+  		<label class="radio" wx:for="{{items}}" wx:key="key">
+  			<radio value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
+  		</label>
+  	</radio-group>
+
+  	<button class="payment-button" bindtap="getName">支付</button>
+
+  </view>

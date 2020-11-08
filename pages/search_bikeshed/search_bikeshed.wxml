@@ -1,0 +1,20 @@
+
+<view class ="out">
+<text>车棚名称：</text>
+	<input class="input" name="userName" placeholder="请输入车棚名称" bindinput="bsidInput" />
+  
+</view>
+	<button class="loginBtn" bindtap="get_bikeshed">搜索</button>
+
+<view class="content">
+  <block wx:for="{{listArr}}" wx:key="key"  >
+    <searchbikeshedView  datas="{{item}}" > </searchbikeshedView>
+  </block>
+</view>
+
+
+
+<!-- <loadView wx:if="{{onLoad}}" isOnLoad="{{onLoad}}"></loadView> -->
+
+
+

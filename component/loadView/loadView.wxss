@@ -1,0 +1,2 @@
+.onLoading{ font-size:25rpx; color:#666}
+.onLoading::after{ border:none;}

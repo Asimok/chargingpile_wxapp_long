@@ -1,0 +1,7 @@
+
+
+<button class='bottom' type='primary' bindtap="subscribe" lang="zh_CN">
+	订阅
+</button>
+
+   

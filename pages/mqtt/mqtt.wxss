@@ -1,0 +1,19 @@
+.btn {
+  border-radius: 80rpx;
+  margin: 70rpx 50rpx;
+  font-size: 35rpx;
+  background-color: rgb(0, 250, 237);
+  color: rgb(68, 75, 75);
+}
+.header {
+  margin: 0rpx 0 90rpx 50rpx;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+  width: 650rpx;
+  height: 300rpx;
+  line-height: 450rpx;
+}
+
+.tap{ padding:30rpx 0; text-align: center}
+.tap image{ width:230rpx; height: 230rpx;}
+.tap view{ font-size:25rpx; padding-top:5rpx; color:#222;}

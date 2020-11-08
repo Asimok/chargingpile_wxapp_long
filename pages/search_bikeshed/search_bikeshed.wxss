@@ -1,0 +1,14 @@
+
+.out{
+  padding: 20rpx;
+  display: flex;
+  align-items: center;
+}
+.loginBtn{
+  color: rgb(255, 255, 255);
+  background: rgb(81, 158, 9);
+  border-radius: 60rpx;
+  margin: 10rpx 10rpx;
+  font-size: 30rpx;
+}
+.content{ padding:30rpx;}

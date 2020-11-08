@@ -1,0 +1,14 @@
+.banner swiper{ height: 295rpx;}
+.banner swiper image{ width:750rpx; height: 295rpx;}
+
+.subject{ padding:30rpx 0; box-shadow: 0 10rpx 20rpx rgba(0,0,0,0.1);text-align: center}
+.subBox{ display: inline-block; padding:0 40rpx 0 40rpx; text-align: center}
+.subBox image{ width:98rpx; height: 98rpx;}
+.subBox view{ font-size:25rpx; padding-top:5rpx; color:#222;}
+
+
+.content{ padding:30rpx;}
+
+.scan{ padding:30rpx 0; box-shadow: 0 10rpx 20rpx rgba(0,0,0,0.1);text-align: center}
+.scan image{ width:230rpx; height: 230rpx;}
+.scan view{ font-size:25rpx; padding-top:5rpx; color:#222;}

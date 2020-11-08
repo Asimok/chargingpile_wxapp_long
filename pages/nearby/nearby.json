@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "nearbyView":"/component/nearbyView/nearbyView",
+    "headerView":"/component/headerView/headerView",
+    "footerView": "/component/footerView/footerView",
+    "loadView":"/component/loadView/loadView"
+    
+  },
+  "enablePullDownRefresh":true,
+  "navigationBarTitleText":"附近车棚"
+
+}

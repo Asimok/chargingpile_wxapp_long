@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "searchbikeshedView":"/component/searchbikeshedView/searchbikeshedView",
+    "headerView":"/component/headerView/headerView",
+    "footerView": "/component/footerView/footerView",
+    "loadView":"/component/loadView/loadView"
+    
+  },
+  "enablePullDownRefresh":true,
+  "navigationBarTitleText":"搜索车棚"
+
+}

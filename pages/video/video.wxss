@@ -1,0 +1,24 @@
+.header {
+  margin: 30rpx 0 30rpx 50rpx;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+  width:650rpx ;
+  height: 50rpx;
+  line-height: 50rpx;
+}
+
+.error_status{
+  font-size: 40rpx;
+  color: red;
+  margin: 30rpx 0 30rpx 50rpx;
+  text-align: center;
+  width:650rpx ;
+  height: 50rpx;
+
+}
+
+.videoTime{
+  font-size: 38rpx;
+  color: coral;
+  text-align: center;
+}

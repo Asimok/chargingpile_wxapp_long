@@ -1,0 +1,17 @@
+<navigator url="/pages/getChargingpile_detail/getChargingpile_detail?bsId={{datas.bsId}}" class="nearbyView">
+
+	<view class="txt">
+		<view class="h3">{{datas.bsName}}</view>
+
+		<view class='flex-wrp-row item'>
+		<view class="item-left">
+			<view class="id">车棚ID：{{datas.bsId}}</view>
+		</view>
+		<view class="item-right">
+			<view class="distance">距离：{{datas.distance}}</view>
+		</view>
+	</view>
+
+	</view>
+	
+</navigator>

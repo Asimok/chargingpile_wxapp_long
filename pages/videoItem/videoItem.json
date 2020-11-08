@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "videoView":"/component/videoView/videoView",
+    "headerView":"/component/headerView/headerView",
+    "footerView": "/component/footerView/footerView",
+    "loadView":"/component/loadView/loadView"
+
+  },
+  "enablePullDownRefresh":true,
+  "navigationBarTitleText":"查看监控"
+
+}

@@ -1,0 +1,34 @@
+.nearbyView{
+  border-bottom: 1px solid #e5e5e5;
+  padding: 10rpx 0;
+}
+.nearbyView .txt .h3 {
+  font-size: 33rpx;
+  color: rgb(83, 78, 78);
+  height: 50rpx;
+  padding-bottom: 10rpx;
+}
+
+.flex-wrp-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.item {
+  position: relative;
+}
+
+.item-left {
+  flex: 1;
+  /* 重要 */
+  align-items: center;
+  font-size: 26rpx;
+  color: #666
+}
+
+.item-right {
+  position: relative;
+  align-items: center;
+  font-size: 26rpx;
+  color: #666
+}
