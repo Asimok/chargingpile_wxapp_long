@@ -1,5 +1,5 @@
 
-<navigator class="historyView">
+<navigator class="historyView" url="/pages/pay/pay?bsID={{datas.bsId}}&chargeID={{datas.cpId}}&chargePort={{datas.portWay}}&topic={{datas.cpId}}&grp={{datas.grp}}">
 
 <view class="txt">
     <view class="h3">车棚：{{datas.bsName}}</view>
