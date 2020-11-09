@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/mine/mine",
     "pages/main/main",
+    "pages/mine/mine",
     "pages/video/video",
     "pages/mqtt/mqtt",
     "pages/pay_rent/pay_rent",

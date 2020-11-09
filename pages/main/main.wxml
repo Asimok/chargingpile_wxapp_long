@@ -51,6 +51,11 @@
 		</block>
 	</view>
 
+	<view wx:if="{{isshow}}" class='flex-wrp-row item'>
+            <view class="item-left">租期提醒：</view>
+            <view class="item-right">剩余时间：<text>{{restTime}} </text> </view>
+  </view>
+
 	<view class="scan" bindtap="getScancode">
 			<image src="/images/scan.png"></image>
 			<view>扫一扫打开门禁</view>

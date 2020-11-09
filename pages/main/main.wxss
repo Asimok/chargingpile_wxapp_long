@@ -12,3 +12,28 @@
 .scan{ padding:30rpx 0; box-shadow: 0 10rpx 20rpx rgba(0,0,0,0.1);text-align: center}
 .scan image{ width:230rpx; height: 230rpx;}
 .scan view{ font-size:25rpx; padding-top:5rpx; color:#222;}
+.flex-wrp-row {
+
+  display: flex;
+  flex-direction: row;
+}
+
+.item {
+  position: relative;
+  color: darkgoldenrod;
+}
+
+.item-left {
+  flex: 1;
+  align-items: center;
+  font-size: 30rpx;
+  padding-left: 25rpx;
+}
+
+.item-right {
+  position: relative;
+  align-items: center;
+  font-size: 30rpx;
+  padding-right: 25rpx;
+ 
+}

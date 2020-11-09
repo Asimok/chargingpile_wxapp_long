@@ -1,4 +1,5 @@
 const type = 3
+const comm = require("../../utils/comm.js")
 Page({
 
   data: {
@@ -6,7 +7,9 @@ Page({
     listArr: [],
     latitude: '',
     longitude: '',
-    openId: ""
+    openId: "",
+    isshow: false,
+    restTime: ""
   },
   onLoad: function (options) {
     wx.showLoading({
@@ -15,12 +18,13 @@ Page({
     this.get_openid()
     //获得openid之后判断是否登录过
     this.getloc()
+
   },
-//   onShow(){
-//     //调用函数、方法
-//     var that=this;
-//     that.onLoad();
-// },
+  //   onShow(){
+  //     //调用函数、方法
+  //     var that=this;
+  //     that.onLoad();
+  // },
   //获取位置
   getloc: function () {
     var that = this;
@@ -68,10 +72,12 @@ Page({
                         openId: res.data.openid
                       })
                       console.log("主界面的openid>>>>" + res.data.openid);
-                      if (res.data.openid != "")
+                      if (res.data.openid != "") {
                         that.isLogin(res.data.openid)
-                      else
+                        that.getRestTime()
+                      } else
                         that.get_openid()
+
                     }
                   });
                 }
@@ -96,7 +102,7 @@ Page({
     wx.request({
 
       url: 'http://192.168.1.224:8081/bikeshed/closebs?longitude=' + that.data.longitude + '&latitude=' + that.data.latitude + '&number=2',
-     
+
       method: "GET",
 
       success: function (res) {
@@ -192,6 +198,50 @@ Page({
         }
       }
     })
+  },
+  getRestTime: function () {
+    console.log("查询当前租用")
+    var temp_json = {
+      "openId": this.data.openId
+    };
+    console.log(temp_json)
+    var that = this
+    var newsListArr1 = []
+    wx.request({
+      url: 'http://192.168.1.224:8081/long/rent/time',
+      data: temp_json,
+      method: "GET",
+      success: function (res) {
+        console.log("当前租用")
+
+        newsListArr1 = res.data.data;
+        console.log(newsListArr1)
+        that.setData({
+          onLoad: false
+        })
+
+        newsListArr1.restTime = (newsListArr1.restTime / 60000 / 60 / 24).toFixed(0)
+        console.log(newsListArr1.restTime)
+        if (newsListArr1.restTime < 30)
+          that.setData({
+            isshow: true
+          })
+        else
+          that.setData({
+            isshow: false
+          })
+        that.setData({
+          restTime: newsListArr1.restTime + " 天",
+        })
+
+        console.log("展示当前租用信息")
+        console.log(newsListArr1)
+
+        wx.hideLoading()
+      }
+    })
+
+
   }
 
 })
