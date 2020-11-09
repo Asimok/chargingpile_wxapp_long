@@ -1,0 +1,14 @@
+<navigator url="/pages/chargingPile/chargingPile?bsName={{datas.bsName}}&bsId={{datas.bsId}}&no={{datas.no}}&RTNos={{datas.RTNos}}&cpId={{datas.cpId}}&grp={{datas.grp}}" class="out">
+       
+  
+            <view class="h3">车棚：{{datas.bsName}}</view>
+
+            <view class="flex-wrp-row item">
+            <!-- <view>车棚ID：{{datas.bsId}}</view> -->
+            <view class="item-left">充电桩：<text>{{datas.no}}</text></view>
+            <!-- <view>充电桩ID：<text>{{datas.cpId}}  </text> </view> -->
+            <view class="item-right">空闲车位：<text>{{datas.RTNos_num}}个</text></view>
+                   
+            </view>
+      
+</navigator>

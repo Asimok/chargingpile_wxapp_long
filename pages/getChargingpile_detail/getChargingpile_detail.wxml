@@ -1,0 +1,11 @@
+
+<view class="content">
+  <block wx:for="{{listArr}}" wx:key="key"  >
+    <itemView  datas="{{item}}" > </itemView>
+  </block>
+</view>
+
+<loadView isOnLoad="{{onLoad}}"></loadView>
+
+
+

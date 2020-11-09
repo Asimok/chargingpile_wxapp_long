@@ -13,8 +13,6 @@ this.get_openid()
 
   },
 
-
-
   //订阅
 subscribe: function(){
   var that =this

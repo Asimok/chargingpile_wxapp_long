@@ -1,3 +1,4 @@
+//租用记录
 const comm = require("../../utils/comm.js")
 
 Page({
@@ -25,7 +26,7 @@ Page({
     var newsListArr = [];
 
     wx.request({
-      url: 'http://192.168.1.224:8081/long/charge/history',
+      url: 'http://192.168.1.224:8081/long/rent/history',
       data: {
         "openId": that.data.open_id
       },
@@ -37,17 +38,19 @@ Page({
         that.setData({
           onLoad: false
         })
+
         for (var i = 0; i < newsListArr.length; i++) {
           newsListArr[i].endTime = comm.js_date_time(newsListArr[i].endTime)
-          newsListArr[i].startTime = comm.js_date_time(newsListArr[i].startTime)
-          newsListArr[i].percent = (((newsListArr[i].restTime - newsListArr[i].RTime) * 1.0 / newsListArr[i].restTime) * 100).toFixed(0)
-          newsListArr[i].restTime = newsListArr[i].restTime / 60000 + " 分钟"
-          newsListArr[i].RTime = (newsListArr[i].RTime / 60000).toFixed(0) + " 分钟"
+          newsListArr[i].bookTime = comm.js_date_time(newsListArr[i].bookTime)
+          newsListArr[i].percent = (((newsListArr[i].restTime) * 1.0 / newsListArr[i].rentTime) * 100).toFixed(0)
 
-          if (newsListArr[i].chargeStatus == "0") {
-            newsListArr[i].chargeStatus = "正在充电"
+          newsListArr[i].restTime = (newsListArr[i].restTime/ 60000/60/24).toFixed(0) + " 天"
+          newsListArr[i].rentTime = (newsListArr[i].rentTime / 60000/60/24).toFixed(0) + " 天"
+
+          if (newsListArr[i].rentStatus == "0") {
+            newsListArr[i].rentStatus = "未到期"
           } else
-            newsListArr[i].chargeStatus = "已完成"
+            newsListArr[i].rentStatus = "已到期"
           newsListArr[i].price = newsListArr[i].price / 100 + " 元"
 
         }

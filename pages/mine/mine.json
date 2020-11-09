@@ -1,12 +1,12 @@
 {
   "usingComponents": {
-    "historyView":"/component/historyView/historyView",
+    "current_rentView":"/component/current_rentVIew/current_rentVIew",
     "headerView":"/component/headerView/headerView",
     "footerView": "/component/footerView/footerView",
     "loadView":"/component/loadView/loadView"
 
   },
   "enablePullDownRefresh":true,
-  "navigationBarTitleText":"充电记录"
+  "navigationBarTitleText":"我的"
 
 }

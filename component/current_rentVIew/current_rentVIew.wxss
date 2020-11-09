@@ -1,0 +1,55 @@
+.historyView .txt .h3 {
+  font-size: 33rpx;
+  height: 50rpx;
+  padding-bottom: 10rpx;
+  color: rgb(255, 255, 255);
+}
+
+.historyView {
+
+  border-bottom: 1px solid #e5e5e5;
+  padding: 30rpx;
+  background-color: rgb(156, 156, 253);
+  border-radius: 20rpx;
+  color: rgb(255, 255, 255);
+  
+}
+
+.flex-wrp-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.item {
+  position: relative;
+}
+
+.item-left {
+  flex: 1;
+  align-items: center;
+  font-size: 26rpx;
+}
+
+.item-right {
+  position: relative;
+  align-items: center;
+  font-size: 26rpx;
+}
+.item-left1 {
+  flex: 1;
+  align-items: center;
+  font-size: 33rpx;
+}
+
+.item-right1 {
+  position: relative;
+  align-items: center;
+  font-size: 33rpx;
+}
+
+.time{
+  padding-top: 8rpx;
+  color: rgb(255, 255, 255);
+  font-size: 36rpx;
+}
+

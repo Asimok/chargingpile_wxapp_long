@@ -1,12 +1,12 @@
 {
   "usingComponents": {
-    "historyView":"/component/historyView/historyView",
+    "itemView":"/component/itemView/itemView",
     "headerView":"/component/headerView/headerView",
     "footerView": "/component/footerView/footerView",
     "loadView":"/component/loadView/loadView"
-
+    
   },
   "enablePullDownRefresh":true,
-  "navigationBarTitleText":"充电记录"
+  "navigationBarTitleText":"车棚信息"
 
 }

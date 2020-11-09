@@ -11,24 +11,28 @@ Page({
     startTime: "",
     topic: "",
     fee: "",
-    charge_time: "-",
+    charge_price: "-",
     items: [{
         name: '1',
-        value: '1元',
+        value: '1月',
         checked: 'true'
       },
       {
         name: '2',
-        value: '2元'
+        value: '2月'
       },
       {
         name: '3',
-        value: '3元'
+        value: '3月'
       },
       {
-        name: '4',
-        value: '4元'
+        name: '6',
+        value: '6月'
       },
+      {
+        name: '12',
+        value: '12月'
+      }
     ]
   },
   onLoad: function (e) {
@@ -41,8 +45,9 @@ Page({
       grp:rec_data_json.grp,
       chargePort: rec_data_json.chargePort,
       topic: rec_data_json.topic,
+     
     })
-this.get_openid()
+    this.get_openid()
   this.getPrice1()
   },
   getPrice1:function()
@@ -50,7 +55,10 @@ this.get_openid()
     var that =this
       //请求1元的价格
       wx.request({
-        url: 'http://192.168.1.224:8081/money/get/'+this.data.bsID,
+        url: 'http://192.168.1.224:8081/money/rent/',
+        data:{
+          "bsId" : that.data.bsID
+        },
         method: "GET",
         success: function (res) {
           var getLIst=[]
@@ -58,17 +66,18 @@ this.get_openid()
           getLIst = res.data.data
           console.log(getLIst)
           for (var i = 0; i < getLIst.length; i++) {
-            if (getLIst[i].price == 1) {
-              that.data.charge_time = getLIst[i].time
+            if (getLIst[i].time == 1) {
+              that.data.charge_price = getLIst[i].price
               break
             }
           }
-          console.log("1元充电时长")
-          console.log( that.data.charge_time)
+          console.log("1月充电时长")
+          console.log( that.data.charge_price)
           that.setData({
-            payTime: that.data.charge_time
+            payTime: that.data.charge_price
           })
-          that.data.fee=1
+          //费用
+          that.data.fee=that.data.charge_price
 
         }
       })
@@ -81,7 +90,10 @@ this.get_openid()
     this.data.fee =e.detail.value
     console.log('radio发生change事件，携带value值为：', checkPrice)
     wx.request({
-      url: 'http://192.168.1.224:8081/money/get/'+that.data.bsID,
+      url: 'http://192.168.1.224:8081/money/rent/',
+      data:{
+        "bsId" : that.data.bsID
+      },
       method: "GET",
       success: function (res) {
         var getLIst=[]
@@ -89,18 +101,20 @@ this.get_openid()
         getLIst = res.data.data
         console.log(getLIst)
         for (var i = 0; i < getLIst.length; i++) {
-          if (getLIst[i].price == checkPrice) {
-            that.data.charge_time = getLIst[i].time
+          if (getLIst[i].time == checkPrice) {
+            that.data.charge_price = getLIst[i].price
             break
           }
         }
         console.log("充电时长")
-        console.log( that.data.charge_time)
+        console.log( that.data.charge_price)
         that.setData({
-          payTime: that.data.charge_time
+          payTime: that.data.charge_price
         })
-
+         //费用
+         that.data.fee=that.data.charge_price
       }
+      
     })
    
   },
@@ -135,8 +149,8 @@ this.get_openid()
     var fee = that.data.fee
     console.log(fee)
 
-    var tempdata ="充电_"+that.data.bsName+"_"+ that.data.bsID + "_" + that.data.chargeID + "_" +that.data.grp+"_"+
-     that.data.chargePort + "_"+ that.data.charge_time + "分钟"
+    var tempdata ="长租_"+that.data.bsName+"_"+ that.data.bsID + "_" + that.data.chargeID + "_" +that.data.grp+"_"+
+     that.data.chargePort + "_"+ that.data.charge_price + "分钟"
     var temp_json = {
       "openId": that.data.openId,
       "appId":"wx70c5b593e65351a8",
@@ -159,6 +173,7 @@ this.get_openid()
         that.doWxPay(res)
       }
     })
+
   },
   doWxPay(param) {
     var that = this
@@ -197,27 +212,10 @@ this.get_openid()
     });
 
   },
-  //支付成功跳转充电
+  //支付成功跳转租用记录
   goto_charge: function () {
-    var send_charge_data = {
-      bsID: this.data.bsID,
-      chargeID: this.data.chargeID,
-      grp:this.data.grp,
-      chargePort: this.data.chargePort,
-      restTime:this.data.charge_time,
-      openId:this.data.openId,
-      topic: this.data.topic,
-    
-      charge_time:this.data.charge_time,
-      fee: this.data.fee
-    }
-    var str = JSON.stringify(send_charge_data);
-    console.log("支付成功")
-    console.log("带给充电界面的参数")
-    console.log(str)
-    //跳转
     wx.redirectTo({
-      url: '/pages/mqtt/mqtt?data=' + str,
+      url: '/pages/long_history/long_history'
     })
   },
   get_openid: function () {

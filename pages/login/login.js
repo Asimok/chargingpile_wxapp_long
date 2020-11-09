@@ -78,18 +78,19 @@ Page({
         }
     },
     UserLogin: function () {
-        var temp_send_data = {
-            openId: this.data.user_openid
-        };
-        console.log("发送到后端的用户信息： ");
-        console.log(temp_send_data);
+        var that =this
+    
+     
         wx.request({
-            url: 'http://192.168.1.224:8081/login/open',
+            url: 'http://192.168.1.224:8081/long/login',
             method: "POST",
-            data: temp_send_data,
+            data: {
+                "openId": that.data.user_openid
+            },
             // 解析注册状态
             success: (res) => {
-                console.log(res.data)
+                console.log("登录状态")
+                console.log(res)
                 var status = res.data.status
                 console.log(res.data.status)
                 if (status == -1) {

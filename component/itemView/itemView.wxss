@@ -1,0 +1,25 @@
+.h3{ font-size: 33rpx; color:rgb(84, 59, 107); height: 50rpx;}
+
+.out{padding: 10rpx;}
+.flex-wrp-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.item {
+  position: relative;
+  padding-top: 5rpx;
+  color: rgb(111, 167, 22);
+}
+
+.item-left {
+  flex: 1;
+  align-items: center;
+  font-size: 26rpx;
+}
+
+.item-right {
+  position: relative;
+  align-items: center;
+  font-size: 26rpx;
+}

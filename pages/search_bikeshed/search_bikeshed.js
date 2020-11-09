@@ -51,11 +51,9 @@ Page({
             onLoad: false
           })
         }
-
         that.setData({
           listArr: newsListArr,
         })
-
         console.log("展示车棚信息")
         console.log(newsListArr)
         that.setData({

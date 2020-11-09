@@ -1,3 +1,4 @@
+
 <navigator class="historyView">
 
 <view class="txt">
@@ -8,7 +9,7 @@
             <view class="item-right">车位：<text>{{datas.portWay}} </text></view>
         </view>
 
-        <view class="item-left">开始时间：<text>{{datas.startTime}} </text> </view>
+        <view class="item-left">开始时间：<text>{{datas.bookTime}} </text> </view>
         <view class="item-left">结束时间：<text>{{datas.endTime}} </text> </view>
 
         <progress percent="{{datas.percent}}" backgroundColor="white" activeColor="green" duration="30"
@@ -17,17 +18,16 @@
 
 
         <view class='flex-wrp-row item time'>
-            <view class="item-left">充电时间：<text>{{datas.restTime}} </text> </view>
-            <view class="item-right">剩余时间：<text>{{datas.RTime}} </text> </view>
+            <view class="item-left">租用时间：<text>{{datas.rentTime}} </text> </view>
+            <view class="item-right">剩余时间：<text>{{datas.restTime}} </text> </view>
         </view>
 
         <view class='flex-wrp-row item'>
             <view class="item-left price">花费：<text>{{datas.price}} </text> </view>
-            <view class="item-right chargeStatus">充电状态：<text>{{datas.chargeStatus}} </text> </view>
+            <view class="item-right chargeStatus">租用状态：<text>{{datas.rentStatus}} </text> </view>
         </view>
 
 
     </view>
 </view>
 </navigator>
-

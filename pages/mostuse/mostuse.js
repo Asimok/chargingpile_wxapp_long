@@ -13,7 +13,6 @@ Page({
       title: '加载中...',
     })
     this.get_openid()
-    
   },
   //获取openid
   get_openid: function () {
@@ -33,7 +32,6 @@ Page({
                   console.log("最常使用站点的code>>>>:" + res.code);
 
                   wx.request({
-
                     url: 'https://api.weixin.qq.com/sns/jscode2session?appid=wx70c5b593e65351a8&secret=69ab78befe069b6a55397d50801f9e72&js_code=' + res.code + '&grant_type=authorization_code' + res.code + '&grant_type=authorization_code',
                     success: res => {
 

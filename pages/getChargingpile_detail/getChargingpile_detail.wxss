@@ -1,0 +1,2 @@
+/* pages/hyList/hyList.wxss */
+.content{ padding:30rpx;}

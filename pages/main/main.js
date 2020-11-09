@@ -96,7 +96,7 @@ Page({
     wx.request({
 
       url: 'http://192.168.1.224:8081/bikeshed/closebs?longitude=' + that.data.longitude + '&latitude=' + that.data.latitude + '&number=2',
-      // url: 'http://192.168.1.224:8081/bikeshed/closebs?longitude=125.160005&latitude=46.595538&number=-1',
+     
       method: "GET",
 
       success: function (res) {
@@ -141,7 +141,7 @@ Page({
       }
     })
   },
-  //扫码 跳转
+  //扫码 打开门禁
   getScancode: function () {
     var that = this
     wx.scanCode({
@@ -176,7 +176,7 @@ Page({
     console.log("发送到后端的用户信息： ");
     console.log(temp_send_data);
     wx.request({
-      url: 'http://192.168.1.224:8081/login/open',
+      url: 'http://192.168.1.224:8081/long/login',
       method: "POST",
       data: temp_send_data,
       // 解析注册状态

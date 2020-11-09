@@ -1,10 +1,14 @@
 {
   "pages": [
+    "pages/mine/mine",
     "pages/main/main",
     "pages/video/video",
     "pages/mqtt/mqtt",
+    "pages/pay_rent/pay_rent",
     "pages/pay/pay",
     "pages/login/login",
+    "pages/getChargingpile_detail/getChargingpile_detail",
+    "pages/chargingPile/chargingPile",
     "pages/search_bikeshed/search_bikeshed",
     "pages/history/history",
     "pages/verification_code/verification_code",
@@ -12,7 +16,8 @@
     "pages/logs/logs",
     "pages/mostuse/mostuse",
     "pages/nearby/nearby",
-    "pages/videoItem/videoItem"
+    "pages/videoItem/videoItem",
+    "pages/long_history/long_history"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -30,10 +35,10 @@
         "selectedIconPath": "images/home1.png"
       },
       {
-        "pagePath": "pages/history/history",
-        "text": "历史记录",
-        "iconPath": "images/history2.png",
-        "selectedIconPath": "images/history1.png"
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "images/mine2.png",
+        "selectedIconPath": "images/mine.png"
       }
     ]
   },

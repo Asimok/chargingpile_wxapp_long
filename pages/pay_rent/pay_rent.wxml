@@ -1,8 +1,8 @@
 
-<view class="header">选择充电价格</view>
+<view class="header">选择租用时长</view>
 <view class="out">
 
-  <view class="itemView">	<text >预计充电时长：{{payTime}}分钟</text></view>
+  <view class="itemView">	<text >价格：{{payTime}}元</text></view>
 
   	<radio-group class="radio-group" bindchange="radioChange">
   		<label class="radio" wx:for="{{items}}" wx:key="key">

@@ -1,0 +1,33 @@
+<view class="out">
+
+    <view >
+
+
+        <view class='flex-wrp-row item'>
+            <view class="item-left">充电桩：<text>{{datas.chargeName}}</text></view>
+            <view class="item-right">车位：<text>{{datas.chargePort}} </text></view>
+        </view>
+
+
+        <view class='flex-wrp-row item1'>
+
+        <view class="item-left1">    
+            <navigator
+                url="/pages/pay_rent/pay_rent?bsID={{datas.bsId}}&chargeID={{datas.cpId}}&chargePort={{datas.chargePort}}&topic={{datas.cpId}}&grp={{datas.grp}}"
+                class="chargingPile_detailView">
+                <view >长租</view>
+            </navigator>
+        </view>
+
+        <view class="item-right1">
+            <navigator
+                url="/pages/pay/pay?bsID={{datas.bsId}}&chargeID={{datas.cpId}}&chargePort={{datas.chargePort}}&topic={{datas.cpId}}&grp={{datas.grp}}"
+                class="chargingPile_detailView">
+                <view >充电</view>
+            </navigator>
+        </view>
+    </view>
+
+</view>
+
+</view>

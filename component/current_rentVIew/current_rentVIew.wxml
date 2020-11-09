@@ -1,0 +1,24 @@
+
+<navigator class="historyView">
+
+<view class="txt">
+    <view class="h3">车棚：{{datas.bsName}}</view>
+    <view class="info">
+        <view class='flex-wrp-row item'>
+            <view class="item-left">充电桩：<text>{{datas.no}}</text></view>
+            <view class="item-right">车位：<text>{{datas.portWay}} </text></view>
+        </view>
+
+        <view class="item-left">开始时间：<text>{{datas.bookTime}} </text> </view>
+        <view class="item-left">结束时间：<text>{{datas.endTime}} </text> </view>
+
+
+        <view class='flex-wrp-row item time'>
+            <view class="item-left1">租用时间：<text>{{datas.rentTime}} </text> </view>
+            <view class="item-right1">剩余时间：<text>{{datas.restTime}} </text> </view>
+        </view>
+
+
+    </view>
+</view>
+</navigator>

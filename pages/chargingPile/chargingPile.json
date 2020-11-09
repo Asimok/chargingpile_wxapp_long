@@ -1,12 +1,12 @@
 {
   "usingComponents": {
-    "historyView":"/component/historyView/historyView",
+    "chargingPile_detailView":"/component/chargingPile_detailView/chargingPile_detailView",
     "headerView":"/component/headerView/headerView",
     "footerView": "/component/footerView/footerView",
     "loadView":"/component/loadView/loadView"
-
+    
   },
   "enablePullDownRefresh":true,
-  "navigationBarTitleText":"充电记录"
+  "navigationBarTitleText":"当前充电桩详情"
 
 }

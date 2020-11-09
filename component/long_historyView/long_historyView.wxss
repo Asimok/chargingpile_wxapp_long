@@ -1,0 +1,44 @@
+.historyView .txt .h3 {
+  font-size: 33rpx;
+  
+  height: 50rpx;
+  padding-bottom: 10rpx;
+  color: rgb(83, 78, 78);
+}
+
+.historyView {
+  /* padding: 20rpx; */
+  /* box-shadow:1px 3px 5px 1px #001afff8; */
+  border-bottom: 1px solid #e5e5e5;
+  padding: 30rpx 0;
+}
+
+.flex-wrp-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.item {
+  position: relative;
+}
+
+.item-left {
+  flex: 1;
+  align-items: center;
+  font-size: 26rpx;
+}
+
+.item-right {
+  position: relative;
+  align-items: center;
+  font-size: 26rpx;
+}
+.chargeStatus{
+  color: rgb(9, 207, 75);
+}
+.price{
+  color: rgb(250, 112, 0);
+}
+.time{
+  color: rgb(14, 128, 173);
+}

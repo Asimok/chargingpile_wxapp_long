@@ -45,14 +45,10 @@ Page({
 
     var that = this;
     var newsListArr = [];
-    console.log("that2");
-    console.log(that.data.longitude);
     wx.request({
 
       url: 'http://192.168.1.224:8081/bikeshed/closebs?longitude=' + that.data.longitude + '&latitude=' + that.data.latitude + '&number=-1',
-      // url: 'http://192.168.1.224:8081/chargepile/closebs?longitude=125.160005&latitude=46.595538&number=2',
       method: "GET",
-
       success: function (res) {
         console.log("获取的附近车棚数据")
         console.log(res)
