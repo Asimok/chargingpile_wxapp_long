@@ -1,0 +1,6 @@
+
+<view class="header">门禁开关</view>
+<button class="btn" bindtap="send_open"> 开</button>
+<button class="btn" bindtap="send_close">关</button>
+<button class="btn" bindtap='getScancode'>扫码</button>
+

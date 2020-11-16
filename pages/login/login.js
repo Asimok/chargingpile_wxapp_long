@@ -82,7 +82,7 @@ Page({
     
      
         wx.request({
-            url: 'http://192.168.1.224:8081/long/login',
+            url: 'https://www.hzsmartnet.com/long/login',
             method: "POST",
             data: {
                 "openId": that.data.user_openid

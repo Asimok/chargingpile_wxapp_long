@@ -1,0 +1,17 @@
+.btn  {
+  border-radius: 80rpx;
+  margin: 70rpx 50rpx;
+  font-size: 35rpx;
+  background-color: rgb(121, 226, 100);
+  color: rgb(253, 255, 255);
+}
+
+.header {
+  margin: 90rpx 0 90rpx 50rpx;
+  font-size: 40rpx;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+  width: 650rpx;
+  height: 300rpx;
+  line-height: 450rpx;
+}

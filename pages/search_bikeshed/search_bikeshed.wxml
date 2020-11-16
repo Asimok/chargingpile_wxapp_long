@@ -8,7 +8,7 @@
 
 <view class="content">
   <block wx:for="{{listArr}}" wx:key="key"  >
-    <searchbikeshedView  datas="{{item}}" > </searchbikeshedView>
+    <searchbikeshedView  datas="{{item}}" bindtap="get_is_auth" > </searchbikeshedView>
   </block>
 </view>
 

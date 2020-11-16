@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="69a64d8d-0348-4967-9809-3aa0d00795e4" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/getChargingpile_detail/getChargingpile_detail.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/getChargingpile_detail/getChargingpile_detail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/history/history.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/history/history.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/login/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/login/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/long_history/long_history.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/long_history/long_history.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/main/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/main/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/main/main.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/main/main.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/mine/mine.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/mine/mine.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/mostuse/mostuse.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/mostuse/mostuse.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/mqtt/mqtt.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/mqtt/mqtt.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/nearby/nearby.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/nearby/nearby.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/nearby/nearby.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/nearby/nearby.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/pay/pay.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/pay/pay.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/pay_rent/pay_rent.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/pay_rent/pay_rent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/search_bikeshed/search_bikeshed.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/search_bikeshed/search_bikeshed.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/search_bikeshed/search_bikeshed.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/search_bikeshed/search_bikeshed.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/verification_code/verification_code.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/verification_code/verification_code.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/videoItem/videoItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/videoItem/videoItem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/project.config.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1kIzp1uLZrwK8LTxHuDxjy6vcHe" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="69a64d8d-0348-4967-9809-3aa0d00795e4" name="Default Changelist" comment="" />
+      <created>1605403073717</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1605403073717</updated>
+      <workItem from="1605403075614" duration="111000" />
+      <workItem from="1605491559117" duration="35000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="597" y="252" width="597" height="548" key="find.popup" timestamp="1605491591956">
+      <screen x="0" y="25" width="1792" height="1002" />
+    </state>
+    <state x="597" y="252" width="597" height="548" key="find.popup/0.25.1792.1002@0.25.1792.1002" timestamp="1605491591956" />
+  </component>
+</project>

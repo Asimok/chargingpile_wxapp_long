@@ -1,10 +1,11 @@
 {
   "description": "项目配置文件",
+  "cloudfunctionRoot": "functions/",
   "packOptions": {
     "ignore": []
   },
   "setting": {
-    "urlCheck": false,
+    "urlCheck": true,
     "es6": true,
     "enhance": false,
     "postcss": true,

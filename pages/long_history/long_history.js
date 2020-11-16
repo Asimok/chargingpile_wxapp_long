@@ -26,7 +26,7 @@ Page({
     var newsListArr = [];
 
     wx.request({
-      url: 'http://192.168.1.224:8081/long/rent/history',
+      url: 'https://www.hzsmartnet.com/long/rent/history',
       data: {
         "openId": that.data.open_id
       },
@@ -68,45 +68,27 @@ Page({
   //获取openid
   get_openid: function () {
     var that = this;
-    // 查看是否授权
-    wx.getSetting({
-      success: function (res) {
-        if (res.authSetting['scope.userInfo']) {
-          wx.getUserInfo({
-            success: function (res) {
-
-              wx.login({
-                success: res => {
-
-                  that.setData({
-                    user_code: res.code
-                  })
-                  console.log("历史数据的code:" + res.code);
-
-                  wx.request({
-                    url: 'https://api.weixin.qq.com/sns/jscode2session?appid=wx70c5b593e65351a8&secret=69ab78befe069b6a55397d50801f9e72&js_code=' + res.code + '&grant_type=authorization_code' + res.code + '&grant_type=authorization_code',
-                    success: res => {
-
-                      that.setData({
-                        open_id: res.data.openid
-                      })
-                      console.log("历史数据的openid:" + res.data.openid);
-                      that.getRequest()
-                    }
-                  });
-                }
-              });
-            }
-          });
-        } else {
-          // 用户没有授权
-          // 改变 isHide 的值，显示授权页面
+    wx.cloud.callFunction({
+      name: 'get_openId',
+      complete: res => {
+        console.log('云函数获取到的openid:')
+        console.log(res.result)
+        var openid = res.result.openId;
+        if (openid != "") {
           that.setData({
-            isHide: true
-          });
+            open_id: openid
+          })
+          that.getRequest()
+        } else {
+          that.setData({
+            open_id: ""
+          })
+          that.get_openid()
         }
       }
     });
+
   },
+
 
 })

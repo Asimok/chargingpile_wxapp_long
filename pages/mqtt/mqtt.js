@@ -1,20 +1,21 @@
 //支付成功后跳转
-const mqtt = require('../../utils/mqtt.min.js');
-const clientId = "wx_open" + Date.parse(new Date());
-var url = 'wx://119.45.181.212:8083/mqtt';
-var client = mqtt.connect(url, {
-  clientId: clientId
-});
-client.on('connect', function () {
-  console.log('MQTT连接成功');
-  wx.showToast({
-    title: "MQTT连接成功", // 标题
-    icon: "success", // 图标类型，默认success
-    duration: 2000 // 提示窗停留时间，默认1500ms
-  })
+// const mqtt = require('../../utils/mqtt.min.js');
+// const clientId = "wx_long" + Date.parse(new Date());
+// var url = 'wx://119.45.181.212:8083/mqtt';
+// var client = mqtt.connect(url, {
+//   clientId: clientId
+// });
+// client.on('connect', function () {
+//   console.log('MQTT连接成功');
+//   wx.showToast({
+//     title: "MQTT连接成功", // 标题
+//     icon: "success", // 图标类型，默认success
+//     duration: 2000 // 提示窗停留时间，默认1500ms
+//   })
 
-});
-
+// });
+const app = getApp();
+var client = app.globalData.client
 Page({
   data: {
     isShow: true,
@@ -146,7 +147,7 @@ Page({
     var that = this
     //获取车棚名称
     wx.request({
-      url: 'http://192.168.1.224:8081/bikeshed/name',
+      url: 'https://www.hzsmartnet.com/bikeshed/name',
       method: "GET",
       data: {
         "bsId": that.data.bsID
@@ -214,7 +215,7 @@ Page({
   openbook: function () {
 
     wx.request({
-      url: 'http://192.168.1.224:8081/open/book',
+      url: 'https://www.hzsmartnet.com/open/book',
       method: "POST",
       data: {
         "bsId": this.data.bsID,

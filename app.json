@@ -1,9 +1,10 @@
 {
   "pages": [
     "pages/main/main",
+    "pages/entrance_guard/entrance_guard",
+    "pages/mqtt/mqtt",
     "pages/mine/mine",
     "pages/video/video",
-    "pages/mqtt/mqtt",
     "pages/pay_rent/pay_rent",
     "pages/pay/pay",
     "pages/login/login",

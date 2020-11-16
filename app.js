@@ -1,11 +1,31 @@
 //app.js
+const mqtt = require('/utils/mqtt.min.js');
+const clientId = "wx_long" + Date.parse(new Date());
+var url = 'wx://119.45.181.212:8083/mqtt';
+var client = mqtt.connect(url, {
+  clientId: clientId
+});
+client.on('connect', function () {
+  console.log('MQTT连接成功');
+  wx.showToast({
+    title: "MQTT连接成功", // 标题
+    icon: "success", // 图标类型，默认success
+    duration: 2000 // 提示窗停留时间，默认1500ms
+  })
+
+});
+
 App({
   onLaunch: function () {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-
+     //云开发初始化
+     wx.cloud.init({
+      env: 'chargingpile-long-0e0cx930c4c38b',
+      traceUser: true
+     })
     // 登录
     wx.login({
       success: res => {
@@ -33,6 +53,7 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    client:client,
   }
 })

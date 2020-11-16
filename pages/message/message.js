@@ -87,39 +87,29 @@ get_access_token: function () {
 
   },
 
-  //获取openid
-  get_openid: function () {
-    console.log("获取我的界面的code");
+   //获取openid
+   get_openid: function () {
     var that = this;
-    // 查看是否授权
-    wx.getSetting({
-      success: function (res) {
-        if (res.authSetting['scope.userInfo']) {
-          wx.getUserInfo({
-            success: function (res) {
-              wx.login({
-                success: res => {
-                  that.setData({
-                    user_code: res.code
-                  })
-                  console.log("mqtt界面的code>>>>:" + res.code);
-                  wx.request({
-                    // 自行补上自己的 APPID 和 SECRET
-                    url: 'https://api.weixin.qq.com/sns/jscode2session?appid=wx70c5b593e65351a8&secret=69ab78befe069b6a55397d50801f9e72&js_code=' + res.code + '&grant_type=authorization_code' + res.code + '&grant_type=authorization_code',
-                    success: res => {
-                      // 获取到用户的 openid
-                      that.setData({
-                        open_id: res.data.openid
-                      })
-                      console.log("mqtt界面的openid>>>>:" + res.data.openid);
-                    }
-                  });
-                }
-              });
-            }
-          });
-        } 
+    wx.cloud.callFunction({
+      name: 'get_openId',
+      complete: res => {
+        console.log('云函数获取到的openid:')
+        console.log(res.result)
+        var openid = res.result.openId;
+        if (openid != "") {
+          that.setData({
+            open_id: openid
+          })
+          that.getRequest()
+        } else {
+          that.setData({
+            open_id: ""
+          })
+          that.get_openid()
+        }
       }
     });
-  }
+
+  },
+
 })

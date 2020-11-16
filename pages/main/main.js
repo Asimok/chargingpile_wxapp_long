@@ -9,15 +9,18 @@ Page({
     longitude: '',
     openId: "",
     isshow: false,
-    restTime: ""
+    restTime: "",
+    is_auth: false,
+    is_regist: false
   },
   onLoad: function (options) {
     wx.showLoading({
       title: '加载中...',
     })
-    this.get_openid()
+    this.get_is_auth()
     //获得openid之后判断是否登录过
     this.getloc()
+
 
   },
   //   onShow(){
@@ -46,54 +49,7 @@ Page({
     })
 
   },
-  //获取openid
-  get_openid: function () {
-    var that = this;
-    // 查看是否授权
-    wx.getSetting({
-      success: function (res) {
-        if (res.authSetting['scope.userInfo']) {
-          wx.getUserInfo({
-            success: function (res) {
-              wx.login({
-                success: res => {
-                  // 获取到用户的 code 之后：res.code
-                  that.setData({
-                    user_code: res.code
-                  })
-                  console.log("主界面的code>>>>:" + res.code);
 
-                  wx.request({
-
-                    url: 'https://api.weixin.qq.com/sns/jscode2session?appid=wx70c5b593e65351a8&secret=69ab78befe069b6a55397d50801f9e72&js_code=' + res.code + '&grant_type=authorization_code' + res.code + '&grant_type=authorization_code',
-                    success: res => {
-
-                      that.setData({
-                        openId: res.data.openid
-                      })
-                      console.log("主界面的openid>>>>" + res.data.openid);
-                      if (res.data.openid != "") {
-                        that.isLogin(res.data.openid)
-                        that.getRestTime()
-                      } else
-                        that.get_openid()
-
-                    }
-                  });
-                }
-              });
-            }
-          });
-        } else {
-          // 用户没有授权
-          // 改变 isHide 的值，显示授权页面
-          that.setData({
-            isHide: true
-          });
-        }
-      }
-    });
-  },
   // 网络请求核心函数
   getRequest: function () {
 
@@ -101,7 +57,7 @@ Page({
     var newsListArr = [];
     wx.request({
 
-      url: 'http://192.168.1.224:8081/bikeshed/closebs?longitude=' + that.data.longitude + '&latitude=' + that.data.latitude + '&number=2',
+      url: 'https://www.hzsmartnet.com/bikeshed/closebs?longitude=' + that.data.longitude + '&latitude=' + that.data.latitude + '&number=2',
 
       method: "GET",
 
@@ -150,55 +106,135 @@ Page({
   //扫码 打开门禁
   getScancode: function () {
     var that = this
-    wx.scanCode({
-      success: (res) => {
-        var scan_data = res.result;
-        var scan_data_json = JSON.parse(scan_data)
-        //二维码内容
-        var send_scan_data = {
-          bsID: scan_data_json.bsID,
-          chargeID: scan_data_json.chargeID,
-          grp: scan_data_json.grp,
-          chargePort: scan_data_json.chargePort,
-          topic: scan_data_json.topic,
-          openId: that.data.openId
+    var can_use = this.data.is_regist
+    if (can_use)
+      wx.scanCode({
+        success: (res) => {
+          var scan_data = res.result;
+          var scan_data_json = JSON.parse(scan_data)
+          //二维码内容
+          var send_scan_data = {
+            client_id: scan_data_json.client_id,
+            code: scan_data_json.code,
+            type: scan_data_json.type,
+            mode: scan_data_json.mode,
+            open_id: that.data.openId
+          }
+          var str = JSON.stringify(send_scan_data);
+          console.log("二维码数据")
+          console.log(send_scan_data)
+          //跳转
+          wx.navigateTo({
+            url: '/pages/entrance_guard/entrance_guard?data=' + str,
+          })
         }
-        var str = JSON.stringify(send_scan_data);
-        console.log("二维码数据")
-        console.log(send_scan_data)
-        //跳转
-        wx.navigateTo({
-          url: '/pages/pay/pay?data=' + str,
-        })
-      }
-    })
+      })
+    else {
+      wx.showModal({
+        title: '提示',
+        content: '此功能需要授权登录！',
+        success(res) {
+          if (res.confirm) {
+
+            that.bindGetUserInfo()
+          } else if (res.cancel) {
+            console.log('用户点击取消')
+          }
+        }
+      })
+    }
+  },
+  is_near_canuse: function () {
+    var can_use = this.data.is_regist
+    if (!can_use)
+      wx.showModal({
+        title: '提示',
+        content: '此功能需要授权登录！',
+        success(res) {
+          if (res.confirm) {
+            // 登录
+            wx.reLaunch({
+              url: '/pages/login/login',
+            })
+          } else if (res.cancel) {
+            // 登录
+            wx.reLaunch({
+              url: '/pages/main/main',
+            })
+          }
+        }
+      })
 
   },
+  //获取openid
+  get_is_auth: function () {
+    var that = this;
+    wx.cloud.callFunction({
+      name: 'get_openId',
+      complete: res => {
+        console.log('云函数获取到的openid:')
+        console.log(res.result)
+        var openid = res.result.openId;
+        if (openid != "") {
+
+          that.setData({
+            openId: openid,
+            is_auth: true
+          })
+          console.log("已授权");
+          that.isLogin(openid)
+        } else {
+          console.log("未授权");
+          that.setData({
+            openId: "",
+            is_auth: false
+          })
+          that.get_is_auth()
+        }
+      }
+    });
+
+  },
+  
   isLogin: function (temp_openid) {
     var that = this
     var temp_send_data = {
       openId: temp_openid
     };
-    console.log("发送到后端的用户信息： ");
+    console.log("判断是否注册： ");
     console.log(temp_send_data);
     wx.request({
-      url: 'http://192.168.1.224:8081/long/login',
+      url: 'https://www.hzsmartnet.com/long/login',
       method: "POST",
       data: temp_send_data,
       // 解析注册状态
       success: (res) => {
         console.log(res.data)
         var status = res.data.status
-        console.log(res.data.status)
         if (status == -1) {
-          // 登录
-          wx.reLaunch({
-            url: '/pages/login/login',
+          that.setData({
+            is_regist: false
           })
+          console.log("未注册")
+          // 登录
+          // wx.reLaunch({
+          //   url: '/pages/login/login',
+          // })
+        } else if (status == 0) {
+          that.setData({
+            is_regist: true
+          })
+          console.log("已注册")
         }
       }
     })
   },
+  bindGetUserInfo: function () {
+    wx.reLaunch({
+      url: '/pages/login/login',
+    })
+  },
+
   getRestTime: function () {
     console.log("查询当前租用")
     var temp_json = {
@@ -208,7 +244,7 @@ Page({
     var that = this
     var newsListArr1 = []
     wx.request({
-      url: 'http://192.168.1.224:8081/long/rent/time',
+      url: 'https://www.hzsmartnet.com/long/rent/time',
       data: temp_json,
       method: "GET",
       success: function (res) {
@@ -222,7 +258,7 @@ Page({
 
         newsListArr1.restTime = (newsListArr1.restTime / 60000 / 60 / 24).toFixed(0)
         console.log(newsListArr1.restTime)
-        if (newsListArr1.restTime < 30)
+        if (newsListArr1.restTime < 3)
           that.setData({
             isshow: true
           })

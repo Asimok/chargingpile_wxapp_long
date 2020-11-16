@@ -6,7 +6,8 @@ Page({
     listArr: [],
     open_id: "",
     bsName: '',
-
+    is_auth: false,
+    is_regist: false
   },
 
   onLoad: function (options) {
@@ -27,7 +28,7 @@ Page({
     console.log("要搜索的车棚名称")
     console.log(that.data.bsName)
     wx.request({
-      url: 'http://192.168.1.224:8081/bikeshed/' + that.data.bsName,
+      url: 'https://www.hzsmartnet.com/bikeshed/' + that.data.bsName,
       method: "GET",
       success: function (res) {
         console.log("车棚数据")
@@ -63,8 +64,6 @@ Page({
       }
     })
 
-
-
   },
 
   //获取用户输入的车棚名
@@ -77,6 +76,83 @@ Page({
   get_bikeshed: function () {
 
     this.getRequest()
-  }
+  },
+ //获取openid
+ get_is_auth: function () {
+  var that = this;
+  wx.cloud.callFunction({
+    name: 'get_openId',
+    complete: res => {
+      console.log('云函数获取到的openid:')
+      console.log(res.result)
+      var openid = res.result.openId;
+      if (openid != "") {
+
+        that.setData({
+          openId: openid,
+          is_auth: true
+        })
+        console.log("已授权");
+        that.isLogin(openid)
+      } else {
+        console.log("未授权");
+        that.setData({
+          openId: "",
+          is_auth: false
+        })
+        that.get_is_auth()
+      }
+    }
+  });
+
+},
+    isLogin: function (temp_openid) {
+      var that = this
+      var temp_send_data = {
+        openId: temp_openid
+      };
+      console.log("判断是否注册： ");
+      console.log(temp_send_data);
+      wx.request({
+        url: 'https://www.hzsmartnet.com/long/login',
+        method: "POST",
+        data: temp_send_data,
+        // 解析注册状态
+        success: (res) => {
+          console.log(res.data)
+          var status = res.data.status
+          if (status == -1) {
+            that.setData({
+              is_regist: false
+            })
+            console.log("附近车棚未注册")
+            wx.showModal({
+              title: '提示',
+              content: '此功能需要授权登录！',
+              success(res) {
+                if (res.confirm) {
+  
+                  // 登录
+                  wx.reLaunch({
+                    url: '/pages/login/login',
+                  })
+                } else if (res.cancel) {
+                  // 登录
+                  wx.reLaunch({
+                    url: '/pages/main/main',
+                  })
+                }
+              }
+            })
+  
+          } else if (status == 0) {
+            that.setData({
+              is_regist: true
+            })
+            console.log("已注册")
+          }
+        }
+      })
+    },
 
 })
